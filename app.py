@@ -88,7 +88,7 @@ if selected_sect == 'Personality Prediction Tool':
     # sidebar
     mdls = ['Kaggle Data', 'Reddit Data']
     selected_mod = st.radio(
-        label='Choose a dataset for Prediction', options=mdls)
+        label='Choose a model for Prediction', options=mdls)
 
     # load models
     # 1. Model trained with Kaggle Data
