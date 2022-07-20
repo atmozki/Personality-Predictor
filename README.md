@@ -3,12 +3,13 @@
 # PERSONALITY PREDICTOR
 
 <img src="/Screenshots/SS1.png" />
+<img src="/Screenshots/SS2.png" />
 
 > App **[link](https://atmozki-personality-predictor-app-2lj9sa.streamlitapp.com/)**<br> >
 > Model Files **[link]()**<br>
 
 
-### Run locally:
+## Run Locally:
 
 `pip install -r requirements.txt`
 <br>
