@@ -52,7 +52,7 @@ def predict(model, input):
 
 
 st.set_page_config(
-    page_title="PERSONALITY PERDICTOR",
+    page_title="PERSONALITY PREDICTOR",
     page_icon="🔮",
     layout="centered"
 )
