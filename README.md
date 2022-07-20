@@ -5,8 +5,8 @@
 <img src="/Screenshots/SS1.png" />
 <img src="/Screenshots/SS2.png" />
 
-App **[Click Here](https://atmozki-personality-predictor-app-2lj9sa.streamlitapp.com/)**<br>
-Model Files **[Click Here](https://www43.zippyshare.com/v/QMFCAQzj/file.html)**<br>
+App **[Link](https://atmozki-personality-predictor-app-2lj9sa.streamlitapp.com/)**<br>
+Model Files **[Link](https://www43.zippyshare.com/v/QMFCAQzj/file.html)**<br>
 
 
 ## Run Locally:
