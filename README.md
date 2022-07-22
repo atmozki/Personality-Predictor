@@ -16,6 +16,6 @@ Model Files **[Link](https://www43.zippyshare.com/v/QMFCAQzj/file.html)**<br>
 `streamlit run app.py `
 
 
-## Credits
+<!-- ## Credits
 
-Andrel's **[MBTI Prediction Tool](https://github.com/ackw/mbti-prediction-tool)**.
+Andrel's **[MBTI Prediction Tool](https://github.com/ackw/mbti-prediction-tool)**. -->
