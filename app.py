@@ -1,4 +1,6 @@
 # imports ----------------------------------------------------------------------
+from ast import alias
+from ctypes import alignment
 from email.mime import image
 from textblob import TextBlob
 import streamlit as st
@@ -25,7 +27,7 @@ from plotly.subplots import make_subplots
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
-# sentiment analysis & subjectivity
+# Sentiment analysis & subjectivity analysis
 import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 nltk.download("vader_lexicon")
@@ -33,13 +35,16 @@ s = SentimentIntensityAnalyzer()
 
 # Initialisation ----------------------------------------------------------------------
 
+# Predict Function Global declaration
 
 def predict(model, input):
     print("User input : ", input)
     class_names = ['ENFJ', 'ENFP', 'ENTJ', 'ENTP', 'ESFJ', 'ESFP', 'ESTJ',
                    'ESTP', 'INFJ', 'INFP', 'INTJ', 'INTP', 'ISFJ', 'ISFP', 'ISTJ', 'ISTP']
-
+    
     # GloVe
+    # Load tokenizer
+    # Tokenization is a process of converting a text into tokens(smaller chunks of text, strings into letters, words, or numbers)
     with open(picklepath, 'rb') as handle:
         loaded_tokenizer = pickle.load(handle)
         seq = loaded_tokenizer.texts_to_sequences([input])
@@ -78,6 +83,8 @@ if selected_sect == 'Personality Prediction Tool':
     user_input = st.text_input(value="", label="Enter text here:",
                                help="Type something here, then press the Enter!")
 
+    st.info("Meaningful Sentences only! No emojis or symbols!")
+    
     # simple text cleaning
     user_input = user_input.lower()
     user_input = re.sub(r'[^\w\s]', '', user_input)
@@ -131,7 +138,7 @@ if selected_sect == 'Personality Prediction Tool':
             else:
                 subjectivity = 'Somewhat Subjective and Objecive'
 
-            # Sentiment
+            # Result
             score = s.polarity_scores(user_input)
             if score['compound'] > 0:
                 st.subheader("Result")
@@ -147,6 +154,63 @@ if selected_sect == 'Personality Prediction Tool':
                 st.subheader("Result")
                 st.write("The Predictor thinks you're an ", prediction,
                          "+ the words are ", subjectivity, "and Negative😢")
+        
+            #Explanation(Basic Template explaination)
+
+            st.subheader("Explanation")
+
+            if prediction == 'ENFJ':
+                st.write("ENFJs are natural-born leaders who exude charisma and warmth. They are the life of the party and the first to volunteer for a cause. They are also deeply empathetic and intuitive, and they use these traits to help others. ENFJs are often described as the most charismatic of all the types, and they are often found in positions of leadership. They are also known for their ability to inspire others and bring out the best in people. ENFJs are often described as the most charismatic of all the types, and they are often found in positions of leadership. They are also known for their ability to inspire others and bring out the best in people.")
+                st.write("For More Details Click here: [ENFJ](https://www.16personalities.com/enfj-personality)")
+            elif prediction == 'ENFP':
+                st.write("ENFPs are warm, empathetic, and creative individuals who are always looking for new ways to help others. They are often described as the life of the party and the first to volunteer for a cause. ENFPs are warm, empathetic, and creative individuals who are always looking for new ways to help others. They are often described as the life of the party and the first to volunteer for a cause.")
+                st.write("For More Details Click here: [ENFP](https://www.16personalities.com/enfp-personality)")
+            elif prediction == 'ENTJ':
+                st.write("ENTJs are natural-born leaders who are always looking for new ways to help others. They are often described as the life of the party and the first to volunteer for a cause. ENTJs are warm, empathetic, and creative individuals who are always looking for new ways to help others. They are often described as the life of the party and the first to volunteer for a cause.")
+                st.write("For More Details Click here: [ENTJ](https://www.16personalities.com/entj-personality)")
+            elif prediction == 'ENTP':
+                st.write("ENTPs are natural-born leaders who are always looking for new ways to help others. They are often described as the life of the party and the first to volunteer for a cause. ENTPs are warm, empathetic, and creative individuals who are always looking for new ways to help others. They are often described as the life of the party and the first to volunteer for a cause.")
+                st.write("For More Details Click here: [ENTP](https://www.16personalities.com/entp-personality)")
+            elif prediction == 'ESFJ':
+                st.write("ESFJs are natural-born leaders who are always looking for new ways to help others. They are often described as the life of the party and the first to volunteer for a cause. ESFJs are warm, empathetic, and creative individuals who are always looking for new ways to help others. They are often described as the life of the party and the first to volunteer for a cause.")
+                st.write("For More Details Click here: [ESFJ](https://www.16personalities.com/esfj-personality)")
+            elif prediction == 'ESFP':
+                st.write("ESFPs are natural-born leaders who are always looking for new ways to help others. They are often described as the life of the party and the first to volunteer for a cause. ESFPs are warm, empathetic, and creative individuals who are always looking for new ways to help others. They are often described as the life of the party and the first to volunteer for a cause.")
+                st.write("For More Details Click here: [ESFP](https://www.16personalities.com/esfp-personality)")
+            elif prediction == 'ESTJ':
+                st.write("ESTJs are natural-born leaders who are always looking for new ways to help others. They are often described as the life of the party and the first to volunteer for a cause. ESTJs are warm, empathetic, and creative individuals who are always looking for new ways to help others. They are often described as the life of the party and the first to volunteer for a cause.")
+                st.write("For More Details Click here: [ESTJ](https://www.16personalities.com/estj-personality)")
+            elif prediction == 'ESTP':
+                st.write("ESTPs are natural-born leaders who are always looking for new ways to help others. They are often described as the life of the party and the first to volunteer for a cause. ESTPs are warm, empathetic, and creative individuals who are always looking for new ways to help others. They are often described as the life of the party and the first to volunteer for a cause.")
+                st.write("For More Details Click here: [ESTP](https://www.16personalities.com/estp-personality)")
+            elif prediction == 'INFJ':
+                st.write("INFJs are natural-born leaders who are always looking for new ways to help others. They are often described as the life of the party and the first to volunteer for a cause. INFJs are warm, empathetic, and creative individuals who are always looking for new ways to help others. They are often described as the life of the party and the first to volunteer for a cause.")
+                st.write("For More Details Click here: [INFJ](https://www.16personalities.com/infj-personality)")
+            elif prediction == 'INFP':
+                st.write("INFPs are natural-born leaders who are always looking for new ways to help others. They are often described as the life of the party and the first to volunteer for a cause. INFPs are warm, empathetic, and creative individuals who are always looking for new ways to help others. They are often described as the life of the party and the first to volunteer for a cause.")
+                st.write("For More Details Click here: [INFP](https://www.16personalities.com/infp-personality)")
+            elif prediction == 'INTJ':
+                st.write("INTJs are natural-born leaders who are always looking for new ways to help others. They are often described as the life of the party and the first to volunteer for a cause. INTJs are warm, empathetic, and creative individuals who are always looking for new ways to help others. They are often described as the life of the party and the first to volunteer for a cause.")
+                st.write("For More Details Click here: [INTJ](https://www.16personalities.com/intj-personality)")
+            elif prediction == 'INTP':
+                st.write("INTPs are natural-born leaders who are always looking for new ways to help others. They are often described as the life of the party and the first to volunteer for a cause. INTPs are warm, empathetic, and creative individuals who are always looking for new ways to help others. They are often described as the life of the party and the first to volunteer for a cause.")
+                st.write("For More Details Click here: [INTP](https://www.16personalities.com/intp-personality)")
+            elif prediction == 'ISFJ':
+                st.write("ISFJs are natural-born leaders who are always looking for new ways to help others. They are often described as the life of the party and the first to volunteer for a cause. ISFJs are warm, empathetic, and creative individuals who are always looking for new ways to help others. They are often described as the life of the party and the first to volunteer for a cause.")
+                st.write("For More Details Click here: [ISFJ](https://www.16personalities.com/isfj-personality)")
+            elif prediction == 'ISFP':
+                st.write("ISFPs are natural-born leaders who are always looking for new ways to help others. They are often described as the life of the party and the first to volunteer for a cause. ISFPs are warm, empathetic, and creative individuals who are always looking for new ways to help others. They are often described as the life of the party and the first to volunteer for a cause.")
+                st.write("For More Details Click here: [ISFP](https://www.16personalities.com/isfp-personality)")
+            elif prediction == 'ISTJ':
+                st.write("ISTJs are natural-born leaders who are always looking for new ways to help others. They are often described as the life of the party and the first to volunteer for a cause. ISTJs are warm, empathetic, and creative individuals who are always looking for new ways to help others. They are often described as the life of the party and the first to volunteer for a cause.")
+                st.write("For More Details Click here: [ISTJ](https://www.16personalities.com/istj-personality)")
+            elif prediction == 'ISTP':
+                st.write("ISTPs are natural-born leaders who are always looking for new ways to help others. They are often described as the life of the party and the first to volunteer for a cause. ISTPs are warm, empathetic, and creative individuals who are always looking for new ways to help others. They are often described as the life of the party and the first to volunteer for a cause.")
+                st.write("For More Details Click here: [ISTP](https://www.16personalities.com/istp-personality)")
+            else:
+                st.write("Please enter a valid input")
+            
+            st.subheader("Thank You ")
 
 
 # Section two: Visualisation ------------------------------------------------------------
@@ -172,7 +236,7 @@ elif selected_sect == 'Data Visualization':
 
     # Selection Dropdown
     sections = ['Text Analysis', 'Personality Types']
-    selected_viz = st.selectbox("Explore the PersonalityCafe Data:", sections)
+    selected_viz = st.selectbox("Explore the Kaggle Data:", sections)
 
     # Selection one
     if selected_viz == 'Personality Types':
