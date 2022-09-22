@@ -6,7 +6,7 @@
 <img src="/Screenshots/SS2.png" />
 
 App **[Link](https://atmozki-personality-predictor-app-2lj9sa.streamlitapp.com/)**<br>
-Model Files **[Link](https://www43.zippyshare.com/v/QMFCAQzj/file.html)**<br>
+Model Files **[Link](https://anonfiles.com/Z3q4rc94y1/MBTI_Streamlit_Models_-_GitHub_backup_zip)**<br>
 
 
 ## Run Locally:
