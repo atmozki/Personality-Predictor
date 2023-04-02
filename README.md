@@ -4,12 +4,13 @@
 ![GH language](https://img.shields.io/github/languages/top/atmozki/Personality-Predictor?style=for-the-badge)
 
 <p align='center'> 
-<a><img height='230px' src='assets/SS1.png'></a> <a><img height='230px' src='assets/SS2.png'></a>
+<a><img height='200px' src='assets/SS1.png'></a>
+<a><img height='200px' src='assets/SS2.png'></a>
 </p>
 
 ## Demo
 
-App **[Link](https://)**<br>
+App **[Link](https://atmozki-personality-predictor-app-6201a8.streamlit.app/)**<br>
 Model Files **[Link](https://)**<br>
 
 ## Run Locally:
