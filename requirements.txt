@@ -1,0 +1,12 @@
+streamlit==1.4.0
+tensorflow
+keras
+numpy
+pandas
+requests
+nltk
+seaborn
+plotly
+wordcloud
+textblob
+click==7.1.2
