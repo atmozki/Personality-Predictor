@@ -15,7 +15,7 @@ import os
 from tensorflow import keras
 import re
 import string
-from keras_preprocessing.sequence import pad_sequences
+from keras.utils import pad_sequences
 from keras.preprocessing.text import Tokenizer
 import pickle
 

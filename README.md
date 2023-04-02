@@ -1,21 +1,43 @@
+<h1 align='center'> PERSONALITY PREDICTOR </h1>
+<p align='center'> A simple streamlit app to predict your MBTI personality type based on your input text. </p>
+
 ![GH language](https://img.shields.io/github/languages/top/atmozki/Personality-Predictor?style=for-the-badge)
 
-# PERSONALITY PREDICTOR
+<p align='center'> 
+<a><img height='230px' src='assets/SS1.png'></a> <a><img height='230px' src='assets/SS2.png'></a>
+</p>
 
-<img src="/Screenshots/SS1.png" />
-<img src="/Screenshots/SS2.png" />
+## Demo
 
-App **[Link](https://atmozki-personality-predictor-app-2lj9sa.streamlitapp.com/)**<br>
-Model Files **[Link](https://anonfiles.com/Z3q4rc94y1/MBTI_Streamlit_Models_-_GitHub_backup_zip)**<br>
-
+App **[Link](https://)**<br>
+Model Files **[Link](https://)**<br>
 
 ## Run Locally:
 
-`pip install -r requirements.txt`
-<br>
-`streamlit run app.py `
+1. Clone the project
 
+```bash
+  git clone https://github.com/atmozki/Personality-Predictor.git
+```
 
-<!-- ## Credits
+2. Go to the project directory
 
-Andrel's **[MBTI Prediction Tool](https://github.com/ackw/mbti-prediction-tool)**. -->
+```bash
+  cd Personality-Predictor
+```
+
+3. Install dependencies
+
+```bash
+  pip install -r requirements.txt
+```
+
+4. Start the server
+
+```bash
+  streamlit run app.py
+```
+
+## Credits
+
+Andrel's **[MBTI Prediction Tool](https://github.com/ackw/mbti-prediction-tool)**.
