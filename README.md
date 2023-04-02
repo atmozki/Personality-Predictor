@@ -1,8 +1,6 @@
 <h1 align='center'> PERSONALITY PREDICTOR </h1>
 <p align='center'> A simple streamlit app to predict your MBTI personality type based on your input text. </p>
 
-![GH language](https://img.shields.io/github/languages/top/atmozki/Personality-Predictor?style=for-the-badge)
-
 <p align='center'> 
 <a><img height='200px' src='assets/SS1.png'></a>
 <a><img height='200px' src='assets/SS2.png'></a>
@@ -11,7 +9,6 @@
 ## Demo
 
 App **[Link](https://atmozki-personality-predictor-app-6201a8.streamlit.app/)**<br>
-Model Files **[Link](https://)**<br>
 
 ## Run Locally:
 
